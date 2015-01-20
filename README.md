@@ -1,2 +1,2 @@
 # SICP-Answers
-Part Answer of SICP
+Partial Answers of SICP
