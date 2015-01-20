@@ -12,7 +12,7 @@ This package contains code of my solution to the exercise in SICP(2nd Edition,wr
 
 ###Learning Supplements
 1.[The vedio of Berkeley](https://www.youtube.com/watch?v=l28HAzKy0N8&list=PL3E89002AA9B9879E)<br />
-2.[The vedio of MIT](链接: http://pan.baidu.com/s/1c0ANyTU )(密码: 8wj4)<br />
+2.[The vedio of MIT](链接: http://pan.baidu.com/s/1c0ANyTU )  （密码: 8wj4)<br />
 3.[Open Coursewave of MIT](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/)<br />
 4.[Vedio of Pku 程序设计技术和方法](http:/<br />/www.math.pku.edu.cn/teachers/qiuzy/progtech/)<br />
     
