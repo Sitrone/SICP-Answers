@@ -19,6 +19,8 @@ This package contains code of my solution to the exercise in SICP(2nd Edition,wr
 ###Tools
 1.[MIT/GNU Scheme](http://www.gnu.org/software/mit-scheme/)<br />
 2.[Test Manager](http://web.mit.edu/~axch/www/test_manager.html)<br />
-    
+3.[Codes in the book](http://mitpress.mit.edu/sicp/code/index.html)<br />
+4.[Homepage in MIT](http://mitpress.mit.edu/sicp/)<br />
+5.[PDF in Github](https://github.com/sarabander/sicp-pdf)<br />
 
 
