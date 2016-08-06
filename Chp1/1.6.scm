@@ -1,4 +1,4 @@
-(load "chap1\\1.5.scm")
+(load "1.5.scm")
 
 (define (new-if predicate then-clause else-clause)
     (cond (predicate then-clause)
