@@ -13,7 +13,7 @@
    (if (null? sequence)
        initial
        (op (car sequence)
-           (accumulate op initial (cdr sequence))))) 
+           (accumulate op initial (cdr sequence)))))
 
  (define (enumerate-interval low high)
    (if (> low high)
