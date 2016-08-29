@@ -13,6 +13,11 @@
                           (deriv (multiplicand exp) var))
                 (make-product (deriv (multiplier exp) var)
                           (multiplicand exp))))
+          ((exponentiation? exp)
+            (make-product
+                  (exponent exp)
+                  (make-product (make-exponentiation (base exp) (- (exponent n) 1))
+                                (deriv (exponent exp) var))))
             (else
                 (error "unknown expression type -- EDRIV" exp))))
 
@@ -49,8 +54,13 @@
     (cadr s))
 ; 加数为和式list里面的第三个元素
 (define (augend s)
-    (caddr s))
+    (let (rest (cddr s))
+      (if (single-operand? rest)
+          (car rest)
+          (apply make-sum rest)))
 
+(define (single-operand x)
+    (nul? (cdr x)))
 ; 乘式为第一个元素为*的list
 (define (product? x)
     (and (pair? x) (eq? (car x) '*)))
@@ -61,7 +71,26 @@
 (define (multiplicand p)
     (caddr p))
 
+; 幂式
+(define (make-exponentiation base exponent)
+    (cond ((= exponent 0) 1)
+          ((= exponent 1) base)
+          (else
+            (list '** base exponent))))
+
+(define (exponentiation? e)
+    (and (pair? e)
+         (eq? (car x) '**)))
+; 获得base
+(define (base exp)
+    (cadr exp))
+; 获得exp
+(define (exponent exp)
+    (caddr exp))
+
 ; Testing
 (newline)
 (display (deriv '(+ x 3) 'x))
+(newline)
+(display (deriv '(** x 3) 'x))
 (newline)
