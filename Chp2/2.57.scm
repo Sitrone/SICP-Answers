@@ -66,7 +66,6 @@
                 (* m1 m2))
           (else (make-product-list (list m1 m2)))))
 
-
 ; 和式为第一个元素为+的list
 (define (sum? x)
     (and (pair? x) (eq? (car x) '+)))
@@ -94,6 +93,13 @@
     (if (= (length rest) 1)
         (car rest)
         (make-product-list rest))))
+
+; 或者使用序列化操作
+;  (define (augend s)
+;   (accumulate make-sum 0 (cddr s)))
+
+; (define (multiplicand p)
+;   (accumulate make-product 1 (cddr  p)))
 
 ; Testing
 (newline)
