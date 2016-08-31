@@ -22,3 +22,9 @@ This package contains code of my solution to the exercise in SICP(2nd Edition,wr
 3.[Codes in the book](http://mitpress.mit.edu/sicp/code/index.html)<br />
 4.[Homepage in MIT](http://mitpress.mit.edu/sicp/)<br />
 5.[PDF in Github](https://github.com/sarabander/sicp-pdf)<br />
+
+### Next
+1. Essentials of Programming Languages
+2. [source code in the book](https://github.com/mwand/eopl3)
+3. [PDF on line(English 3rd)](https://karczmarczuk.users.greyc.fr/TEACH/Doc/EssProgLan.pdf)
+
