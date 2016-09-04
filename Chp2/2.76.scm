@@ -14,3 +14,5 @@ Data-directed style is the most appropriate when new operations must often be ad
 This is the well-known expression problem（http://c2.com/cgi/wiki?ExpressionProblem）
 
 考虑一个问题：如何在大型系统中运用数据导向(data-objected)的设计方式？
+
+Java中由于没有scheme中的模式匹配，但是可以用visitor模式来弥补，达到同样的效果。
