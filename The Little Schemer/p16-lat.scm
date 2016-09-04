@@ -1,8 +1,4 @@
-(define true #t)
-(define false #f)
-
-(define (atom? x)
-  (and (not (pair? x)) (not (null? x))))
+(load "atom.scm")
 
 (define lat?
     (lambda (l)
