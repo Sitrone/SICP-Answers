@@ -1,5 +1,6 @@
 (load "atom.scm")
 
+; 测试tuple中的元素是不是都是atom
 (define lat?
     (lambda (l)
         (cond
