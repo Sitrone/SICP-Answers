@@ -5,6 +5,7 @@
 (load "p59-add1-sub1.scm")
 
 ;; 对于层次性的列表，需要先判断取出来的（car l）是否是atom
+;; 删除列表中a元素
 (define rember*
     (lambda (a l)
         (cond ((null? l) nil)
@@ -17,7 +18,15 @@
               (else
                 (cons (rember* a (car l))
                       (rember* a (cdr l))))))))
-
+;; 通过使用equal简化
+;; simpilify rember
+(define rember
+    (lambda (s l)
+        (cond ((null? l) nil)
+              ((equal? (car l) s) (cdr l))
+                (else
+                    (cons (car l)
+                          (rember s (cdr l)))))))
 ;; 层次性列表插入，先判断是否是atom
 ;; 如果是，判断是否等于old，是的话插入old右边，同时对剩下的继续递归；如果不是直接递归剩下的
 ;; 不是atom，则分别递归前面和后面两部分
@@ -82,3 +91,75 @@
                 (else
                   (cons (subst* new old (car l))
                         (subst* new old (cdr l))))))))
+
+
+;; 层次性列表的元素右边插入，思路同上
+(define insertL*
+    (lambda (new old l)
+        (cond ((null? l) nil)
+              ((atom? (car l)
+                (cond ((eq? (car l) old)
+                        (cons new
+                              (cons old
+                                    (insertL* new old (cdr l)))))
+                        (else
+                          (cons (car l)
+                                (insertL* new old (cdr l)))))))
+              (else
+                (cons (insertL* new old (car l))
+                      (insertL* new old (cdr l)))))))
+
+;; 层次性列表元素，查找，思路同上
+(define member*
+    (lambda (a l)
+        (cond ((null? l) #f)
+              ((atom? (car l)
+                (cond ((eq? a (car l))
+                  (member* a (cdr l))))
+              (else
+                (or (member* a (car l))
+                    (member* a (cdr l)))))))))
+
+
+;; 寻找最左边的元素
+(define leftmoat
+    (lambda (lat)
+        (cond ((null? lat) nil)
+              ((atom? (car lat) (car lat))
+              (else
+                (leftmoat (car lat)))))))
+
+;; 判断两个列表是否相等
+(define eqlist?
+    (lambda (l1 l2)
+      (cond ((and (null? l1) (null? l2)) #t)
+            ((or (null? l1) (null? l2) #f)
+            ((and (atom? l1) (atom? l2)
+              (cond ((eq? (car l1) (car l2))
+                      (eqlist? (cdr l1) (cdr l2))))
+                    (else
+                      #f)
+            ((or (atom? l1) (atom? l2)
+              #f)
+            (else
+              (and (eqlist? (car l1) (car l2))
+                  (eqlist? (cdr l1) (cdr l2)))))))))))
+
+;; 判断两个符号表达式是否相等
+(define equal?
+    (lambda (s1 s2)
+        (cond ((and (atom? s1) (atom? s2))
+                (eqan? s1 s2))
+              ((or (atom? s1) (atom? s2)) #f)
+              (else
+                (eqlist? s1 s2)))))
+
+
+;; 根据上面的equal? 简化eqlist?
+(define eqlist?
+    (lambda (l1 l2)
+      (cond ((and (null? l1) (null? l2) #t)
+            ((or (null? l1) (null? l2) #f)
+            (else
+              (and (equal? (car l1) (car l2))
+                   (equal? (cdr l1) (cdr l2)))))))))
