@@ -136,5 +136,151 @@
               (cons (car lat)
                     (multirember-T test? (cdr l))))))
 
+(define multirember-co
+    (lambda (a lat col)
+      (cond ((null? lat)
+              (col nil nil))
+            ((eq? (car lat) a)
+              (multirember-co a (cdr lat)
+                            (lambda (newlat seen)
+                                      (col newlat
+                                          (cons (car lat) seen)))))
+            (else
+              (multirember-co a (car lat)
+                              (lambda (newlat seen)
+                                        (col (cons (car lat) newlat)
+                                             seen)))))))
 
-                                     
+(define a-friend
+    (lambda (x y)
+        (null? y)))
+
+(define new-friend
+    (lambda (newlat seen)
+        (col newlat
+             (cons (car lat) seen))))
+
+(define latest-friend
+    (lambda (newlat seen)
+        (a-friend (cons (quote and) newlat)
+                  seen)))
+
+(define last-friend
+    (lambda (x y)
+        (length x)))
+
+; 找到所有lat中old，并将new放到找到的old的左边
+(define multiinsertL
+    (lambda (new old lat)
+        (cond ((null? lat) nil)
+              ((eq? (car lat) old)
+                (cons new
+                      (cons old
+                            (multiinsertL new old (cdr lat))))
+              (else
+                (cons (car lat)
+                      (multiinsertR new old (cdr lat))))))))
+
+(define multiinsertR
+    (lambda (new old lat)
+        (cond ((null? lat) nil)
+              ((eq? (car lat) old)
+                (cons (car lat)
+                      (cons new
+                            (multiinsertR new old (cdr lat)))))
+              (else
+                (cons (car lat)
+                      (multiinsertR new old (cdr lat)))))))
+
+;;multiinsertLR
+(define multiinsertLR
+    (lambda (new oldL oldR lat)
+        (cond ((null? lat) nil)
+              ((eq? (car lat) oldL)
+                (cons new
+                      (cons oldL
+                            (multiinsertLR new oldL oldR (cdr lat)))))
+              ((eq? (car lat) oldR)
+                (cons oldR
+                      (cons new
+                            (multiinsertLR new oldL oldR (cdr lat)))))
+              (else
+                (cons (car lat)
+                      (multiinsertLR new oldL oldR (cdr lat)))))))
+
+;; multiinsertLR-co
+(define multiinsertLR-co
+    (lambda (new oldL oldR lat col)
+        (cons ((null? lat)
+                (col nil 0 0))
+              ((eq? (car lat) oldL)
+                (multiinsertLR-co new oldL oldR (cdr lat)
+                                  (lambda (newlat L R)
+                                      (col (cons new
+                                                 (cons oldL newlat)
+                                           (add1 L)
+                                           R)))))
+              ((eq? (car lat) oldR)
+                (multiinsertLR-co new oldL oldR (cdr lat)
+                                  (lambda (newlat L R)
+                                      (col (cons new
+                                                 (cons oldR newlat)
+                                            L
+                                            (addl R))))))
+              (else
+                (multiinsertLR-co new oldL oldR (cdr lat)
+                                  (lambda (newlat L R)
+                                      (col (cons (car lat)
+                                                 (newlat)
+                                            L
+                                            R))))))))
+
+
+(define even?
+    (lambda (n)
+      (= (* (/ n 2) 2) n)))
+
+;; 找到列表中的所有的偶数
+(define even-only
+    (lambda (l)
+        (cons ((null? l) nil)
+              ((atom? (car l)
+                (cons ((even? (car l))
+                        (cons (car l)
+                              (even-only (cdr l))))
+                      (else
+                        (even-only (cdr l)))))
+              (else
+                (cons (even-only (car l))
+                      (even-only (cdr l))))))))
+
+;; 找到列表中的所有偶数，并求出和或者乘积
+(define even-only-co
+    (lambda (l col)
+        (cond ((null? l)
+                (col ni 1 0))
+              ((atom? (car l))
+                (cons ((even? (car l))
+                        (even-only-co (cdr l)
+                                      (lambda (newl p s)
+                                          (col (cons (car l) newl)
+                                               (* (car l) p)
+                                               s))))
+                      (else
+                        (even-only-co (cdr l)
+                                      (lambda (newl p s)
+                                          (col newl
+                                               p
+                                               (+ (car l) s)))))))
+              (else
+                (even-only-co (car l)
+                              (lambda (al ap as)
+                                  (even-only-co (cdr l)
+                                      (lambda (dl dp ds)
+                                          (col (cons al dl)
+                                               (* ap dp)
+                                               (+ as ds))))))))))
+(define the-last-friend
+    (lambda (newl product sum)
+        (cons sum
+              (cons product newl))))
