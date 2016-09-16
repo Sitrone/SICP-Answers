@@ -1,7 +1,14 @@
 ;; Lambda the Ultimate
 ;;
 ;; 第八章书中程序
+;;-----------------------------------
+;;                                  |
+;;         高阶函数与CPS变换         |
+;;                                  |
+;;-----------------------------------
 
+;; =======================高阶函数======================
+;;
 (define rember-f
     (lambda (test? a l)
         (cons ((null? l) nil)
@@ -88,7 +95,7 @@
       (lambda (new old l)
           (cons new l))))
 
-;; #f代表什么？
+;; #f代表什么？??
 (define rember
     (lambda (a l)
       (insert-g seqrem) #f a l))
@@ -111,6 +118,8 @@
                 ((atom-to-function (operator nexp))
                   (value (1st-sub-exp nexp))
                   (value (2st-sub-exp nexp)))))))
+
+;;=============== 开始介绍continutation的概念=======================
 
 ;; redifine multirember-f
 (define multirember-f
@@ -151,6 +160,7 @@
                                         (col (cons (car lat) newlat)
                                              seen)))))))
 
+;; 果col为a-friend，那么multirember&co的意思就是：member?
 (define a-friend
     (lambda (x y)
         (null? y)))
@@ -165,6 +175,8 @@
         (a-friend (cons (quote and) newlat)
                   seen)))
 
+;; 如果col为last-friend，那么multirember&co的意思就是：
+;; lat中有多少个与a不同的S表达式
 (define last-friend
     (lambda (x y)
         (length x)))
@@ -209,6 +221,8 @@
                       (multiinsertLR new oldL oldR (cdr lat)))))))
 
 ;; multiinsertLR-co
+;; col的newlat参数存放最后插入new参数后的newlat，
+;; L参数是在oldL参数左边插入的次数, R参数是在oldR参数右边插入的次数。
 (define multiinsertLR-co
     (lambda (new oldL oldR lat col)
         (cons ((null? lat)
@@ -255,6 +269,8 @@
                       (even-only (cdr l))))))))
 
 ;; 找到列表中的所有偶数，并求出和或者乘积
+;; col函数的第一个参数表示l列表中所有的偶数列表
+;; 第二个参数表示所有偶数之积，第三个参数表示l列表中所有非偶数之和。
 (define even-only-co
     (lambda (l col)
         (cond ((null? l)
@@ -280,6 +296,10 @@
                                           (col (cons al dl)
                                                (* ap dp)
                                                (+ as ds))))))))))
+;; 如果col为the-last-friend，那么evens-only*&co意思为：
+;;    返回一个列表，列表的第一个S表达式为l参数中所有的偶数之积，
+;;    列表的第二个S表达式为l参数中所有偶数之和，
+;;    列表的剩余S表达式为l参数中所有的偶数。
 (define the-last-friend
     (lambda (newl product sum)
         (cons sum
