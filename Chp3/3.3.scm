@@ -7,8 +7,10 @@
   (define (deposit amount)
     (set! balance (+ balance amount))
     balance)
+;; newly add    
   (define (password-verify? input-password)
     (eq? password input-password))
+
   (define (dispatch input-password m)
     (if (password-verify? input-password)
         (cond ((eq? m 'withdraw)
