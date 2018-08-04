@@ -1,3 +1,4 @@
+#lang sicp
 ;; p 会不断的调用自己，是个死循环
 (define (p) (p))
 

@@ -1,5 +1,7 @@
+#lang sicp
+
 ; Horner规则
-(load "p76.scm")
+(#%require "p76.scm")
 
 (define (horner-eval x coefficient-sequence)
     (accumulate (lambda (this-coff higher-terms)

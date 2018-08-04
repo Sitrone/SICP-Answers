@@ -1,5 +1,6 @@
-(load "sum.scm")
-(load "even-and-odd.scm")
+#lang sicp
+(#%require "sum.scm")
+(#%require "even-and-odd.scm")
 
 ;; 拆分成奇偶来求
 (define (simpson-sum f a b n)

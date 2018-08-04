@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (length-recursive items)
     (if (null? items)
         0

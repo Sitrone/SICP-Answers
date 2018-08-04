@@ -1,4 +1,6 @@
-(load "even-and-odd.scm")
+#lang sicp
+
+(#%require "even-and-odd.scm")
 
 (define (exp base n)
       (iter-exp base n 1))

@@ -1,3 +1,5 @@
+#lang sicp
+
  ;; Supporting functions:
 
  (define nil '())

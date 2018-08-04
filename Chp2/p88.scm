@@ -1,5 +1,7 @@
+#lang sicp
+
 ; 图形语言的抽象
-(load "2.44.scm")
+(#%require "2.44.scm")
 
 (define (right-split)
     (if (= n 0)

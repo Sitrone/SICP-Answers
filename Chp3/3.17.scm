@@ -1,3 +1,5 @@
+#lang sicp
+
 ;;  使用memq
 ;; see also: http://www.gnu.org/software/mit-scheme/documentation/mit-scheme-ref/Searching-Lists.html#Searching-Lists
 

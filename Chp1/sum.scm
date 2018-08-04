@@ -1,3 +1,4 @@
+#lang sicp
 (define (cube x) (* x x x))
 (define (sum term a next b)
     (if (> a b)

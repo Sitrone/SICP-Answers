@@ -1,4 +1,6 @@
-(load "p106.scm")
+#lang sicp
+
+(#%require "p106.scm")
 
 (define (list->tree elements)
     (car (partial-tree elements (length elements))))

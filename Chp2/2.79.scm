@@ -1,4 +1,6 @@
-(load "p129.scm")
+#lang sicp
+
+(#%require "p129.scm")
 
 ;; 先添加通用操作
 (define (equ? x y)

@@ -1,4 +1,6 @@
-(load "2.8.scm")
+#lang sicp
+
+(#%require "2.8.scm")
 
 (define (length x)
     (/ (- (upper-bound x) (lower-bound x)) 2))

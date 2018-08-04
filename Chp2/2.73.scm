@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; 查看p100.scm程序，修改为数据导向的风格
 
 (define (deriv exp var)

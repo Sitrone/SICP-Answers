@@ -1,4 +1,6 @@
-(load "map.scm")
+#lang sicp
+
+(#%require "map.scm")
 
 (define (fringe x)
     (cond ((null? x) nil)

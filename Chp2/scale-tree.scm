@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (scale-tree tree factor)
     (cond ((null? tree) nil)
           ((not (pair? tree)) (* tree factor))

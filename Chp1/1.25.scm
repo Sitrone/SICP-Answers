@@ -1,4 +1,5 @@
-(load "fast-expt.scm")
+#lang sicp
+(#%require "fast-expt.scm")
 
 (define (expmod base exp m)
     (remainder (fast-expt base exp) m))

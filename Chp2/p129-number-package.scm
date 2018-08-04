@@ -1,4 +1,6 @@
-(load "p129.scm")
+#lang sicp
+
+(#%require "p129.scm")
 
 (define (install-scheme-number-package)
     (define (tag x)

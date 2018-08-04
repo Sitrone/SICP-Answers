@@ -1,5 +1,7 @@
-(load "gcd.scm")
-(load "p129.scm")
+#lang sicp
+
+(#%require "gcd.scm")
+(#%require "p129.scm")
 
 (define (install-rational-package)
     ;; interal procedures

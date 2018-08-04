@@ -1,4 +1,6 @@
-(load "2.18.scm")
+#lang sicp
+
+(#%require "2.18.scm")
 
 ;; 理解for-each与map的区别
 ;; map对输入进行指定操作，产生所需要的输出

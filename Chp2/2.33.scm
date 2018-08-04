@@ -1,4 +1,6 @@
-(load "p76.scm")
+#lang sicp
+
+(#%require "p76.scm")
 
 ;  对比书中map的定义
 (define nil '())

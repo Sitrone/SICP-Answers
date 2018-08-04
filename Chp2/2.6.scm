@@ -1,3 +1,5 @@
+#lang sicp
+
 ; Church(丘奇计数)
 ; wiki:https://en.wikipedia.org/wiki/Church_encoding#Computation_with_Church_numerals
 ; ref: 1. https://pfmiles.wordpress.com/2009/11/12/%E9%80%90%E6%AD%A5%E7%90%86%E8%A7%A3%E4%B8%98%E5%A5%87%E6%95%B0%E4%B8%80/

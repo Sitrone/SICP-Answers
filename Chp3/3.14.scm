@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (mystery x)
   (define (loop x y)
     (if (null? x)

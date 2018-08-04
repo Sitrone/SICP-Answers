@@ -1,5 +1,7 @@
+#lang sicp
+
 ;; 列表有环判断，双指针跑圈法
-(load "3.13.scm")
+(#%require "3.13.scm")
 
 (define (has-cycle? lst)
   (define (iter x y)

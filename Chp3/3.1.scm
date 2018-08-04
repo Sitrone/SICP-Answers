@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (make-accumulator sum)
   (lambda (num)
     (set! sum (+ num sum))

@@ -1,3 +1,5 @@
+#lang sicp
+
 (define nil '())
 
 (define (square-tree tree)

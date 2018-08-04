@@ -1,4 +1,5 @@
-(load "even-and-odd.scm")
+#lang sicp
+(#%require "even-and-odd.scm")
 
 (define (square n)
     (* n n))

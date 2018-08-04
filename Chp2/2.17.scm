@@ -1,4 +1,6 @@
-(load "list-function.scm")
+#lang sicp
+
+(#%require "list-function.scm")
 
 ;; 分三种情况，空表，只有一个元素，大于等于一个元素
 (define (last-pair items)

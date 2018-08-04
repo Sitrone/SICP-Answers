@@ -1,4 +1,6 @@
-(load "p76.scm")
+#lang sicp
+
+(#%require "p76.scm")
 
 (define (flatmap proc seq)
     (accumulate append nil (map proc seq)))

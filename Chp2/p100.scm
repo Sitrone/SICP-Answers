@@ -1,3 +1,5 @@
+#lang sicp
+
 ; 符号求导
 
 (define (deriv exp var)

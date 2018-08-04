@@ -5,6 +5,8 @@ This package contains code of my solution to the exercise in SICP(2nd Edition,wr
 ##Useful Reference:  
 [老赵书托（2）：计算机程序的构造与解释](http://www.cnblogs.com/JeffreyZhao/archive/2009/07/15/recommended-reading-2-sicp.html)<br />
 
+[编程入门指南1.5](https://zhuanlan.zhihu.com/p/19959253)<br />
+
 ###Reference Answers  
 1. [SICP 解题集](http://sicp.readthedocs.org/en/latest/)<br />
 2. [Schenewiki Community-Solutions to SICP](http://community.schemewiki.org/?SICP-Solutions) （Great,almost the full version)<br />
@@ -22,6 +24,7 @@ This package contains code of my solution to the exercise in SICP(2nd Edition,wr
 3. [Codes in the book](http://mitpress.mit.edu/sicp/code/index.html)<br />
 4. [Homepage in MIT](http://mitpress.mit.edu/sicp/)<br />
 5. [PDF in Github](https://github.com/sarabander/sicp-pdf)<br />
+6. [DrRacket for sicp](http://www.neilvandyke.org/racket/sicp/)<br />
 
 ### Next
 1. Essentials of Programming Languages

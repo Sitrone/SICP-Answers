@@ -1,6 +1,8 @@
-(load "p186-get-put.scm")
-(load "p124-polar.scm")
-(load "p123-rectangular.scm")
+#lang sicp
+
+(#%require "p186-get-put.scm")
+(#%require "p124-polar.scm")
+(#%require "p123-rectangular.scm")
 
 (define (add x y) (apply-generic 'add x y))
 (define (sub x y) (apply-generic 'sub x y))

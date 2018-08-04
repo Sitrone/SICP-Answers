@@ -1,4 +1,6 @@
-(load "2.7.scm")
+#lang sicp
+
+(#%require "2.7.scm")
 
 ;(define (sub-interval a b)
 ;      (let ((p1 (min (lower-bound a) (lower-bound b)))

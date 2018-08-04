@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; local tables
 (define (make-table)
   (let ((local-table (list '*table*)))

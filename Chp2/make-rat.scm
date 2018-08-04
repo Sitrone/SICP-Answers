@@ -1,4 +1,6 @@
-(load "gcd.scm")
+#lang sicp
+
+(#%require "gcd.scm")
 
 (define (make-rat n d)
       (if (< d 0)

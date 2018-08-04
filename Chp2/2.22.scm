@@ -1,5 +1,7 @@
-(load "map.scm")
-(load "2.18.scm")
+#lang sicp
+
+(#%require "map.scm")
+(#%require "2.18.scm")
 
 ;; 方法一实现的方式其实和2.18习题中实现reverse的方式是一样的
 (define (square-list-1 items)

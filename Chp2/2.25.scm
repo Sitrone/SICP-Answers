@@ -1,3 +1,5 @@
+#lang sicp
+
 ; (1 3 (5 7) 9)
 (define test1 (list 1 3 (list 5 7) 9))
 ; 或者可以定义为

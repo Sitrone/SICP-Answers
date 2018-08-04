@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (has-cycle? lst)
   (let ((identity (cons '() '())))
     (define (iter remain-list)

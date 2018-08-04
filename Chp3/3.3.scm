@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (make-account balance password)
   (define (withdraw amount)
     (if (>= balance amount)

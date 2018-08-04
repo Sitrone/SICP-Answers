@@ -1,4 +1,6 @@
-(load "p106.scm")
+#lang sicp
+
+(#%require "p106.scm")
 
 ; 树的前序遍历，递归
 (define (tree->list-1 tree)

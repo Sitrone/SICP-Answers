@@ -1,3 +1,4 @@
+#lang sicp
 ;; 递归版
 (define (product term a next b)
         (if (> a b)

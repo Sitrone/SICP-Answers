@@ -1,4 +1,5 @@
-(load "even-and-odd.scm")
+#lang sicp
+(#%require "even-and-odd.scm")
 
 (define (double x)
            (+ x x))

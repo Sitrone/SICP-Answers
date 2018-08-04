@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; 实现使用两个变量作为指针，分别指向头和尾
 
 (define (make-queue)

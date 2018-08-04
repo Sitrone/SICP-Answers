@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (estimate-pi trials)
   (sqart (/ 6 (monte-carlo trials cesaro-test))))
 

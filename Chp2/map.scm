@@ -1,4 +1,6 @@
-(load "list-function.scm")
+#lang sicp
+
+(#%require "list-function.scm")
 
 (define (map proc items)
     (if (null? items)

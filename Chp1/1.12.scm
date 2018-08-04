@@ -1,3 +1,4 @@
+#lang sicp
 ;; recursive
 (define (pascal r c)
         (cond ((> c r) (error "error"))
@@ -7,7 +8,7 @@
 
 ;; iterable
 ;;(x + y)^n 二项式定理
-(load "chp1\\factorial.scm")
+(#%require "chp1\\factorial.scm")
 (define (pascal r c)
         (/ (factorial r)
           (* (factorial c)

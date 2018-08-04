@@ -1,5 +1,7 @@
-(load "p123-rectangular.scm")
-(load "p124-polar.scm")
+#lang sicp
+
+(#%require "p123-rectangular.scm")
+(#%require "p124-polar.scm")
 
 ;; 定义过程attach-tag和contents
 (define (attach-tag type-tag contents)

@@ -1,4 +1,6 @@
-(load "p76.scm")
+#lang sicp
+
+(#%require "p76.scm")
 
 ; 后面要生成一个树的子序列，参考前面p75 count-leaves的实现
 (define (count-leaves tree)
@@ -12,7 +14,7 @@
 
 
 ; method 2, 使用2.28的fringe函数，再结合习题2.33
-(load "2.28.scm")
+(#%require "2.28.scm")
 (define (count-leaves-2 tree)
     (accumulate (lambda (current-leave remainder-leaves)
                         (+ 1 remainder-leaves))

@@ -1,4 +1,5 @@
-(load "1.17.scm")
+#lang sicp
+(#%require "1.17.scm")
 
 (define (muti a b)
         (muti-expt a b 0))

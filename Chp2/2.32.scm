@@ -1,3 +1,5 @@
+#lang sicp
+
 (define nil '())
 
 ;同找零问题

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; magnitude, angle通用选择器
 ;; 原因是系统中不存在’complex类型的magnitude的操作
 ;; 需要增加通用型的操作
@@ -9,7 +11,7 @@
 ; (error ...)
 
 
-(load "p129.scm")
+(#%require "p129.scm")
 
 
 (define (real-part z) (apply-generic 'real-part z))

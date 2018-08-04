@@ -1,4 +1,6 @@
-(load "p105.scm")
+#lang sicp
+
+(#%require "p105.scm")
 
 (define (adjoin-set x set)
   (cond ((or (null? set) (< x (car set)))

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; 对make-account的再一次包装
 (define (make-joint account old-passwd new-passwd)
   (lambda (given-passwd mode)

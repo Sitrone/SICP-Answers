@@ -1,4 +1,6 @@
-(load "p103.scm")
+#lang sicp
+
+(#%require "p103.scm")
 
 (define (union-set set1 set2)
     (cond ((and (null? set1) (null? set2)) nil)

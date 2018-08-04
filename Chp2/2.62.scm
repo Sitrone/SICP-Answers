@@ -1,4 +1,6 @@
-(load "2.61.scm")
+#lang sicp
+
+(#%require "2.61.scm")
 
 (define (union-set set1 set2)
     (cond ((null? set1)

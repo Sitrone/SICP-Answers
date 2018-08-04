@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; scheme提供了基本过程pair? 来判断参数是不是序列
 
 (define (count-leaves x)

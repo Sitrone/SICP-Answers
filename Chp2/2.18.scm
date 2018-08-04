@@ -1,4 +1,6 @@
-(load "2.17.scm")
+#lang sicp
+
+(#%require "2.17.scm")
 
 ;; 直观的想法是下面这样子的
 (define (reverse-test l)

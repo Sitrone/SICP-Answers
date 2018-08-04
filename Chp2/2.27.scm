@@ -1,4 +1,6 @@
-(load "2.18.scm")
+#lang sicp
+
+(#%require "2.18.scm")
 
 (define (deep-reverse x)
       (cond ((null? x) nil)

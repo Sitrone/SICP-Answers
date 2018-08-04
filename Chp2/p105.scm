@@ -1,3 +1,5 @@
+#lang sicp
+
 ; 集合，作为排序的表
 
 (define true #t)

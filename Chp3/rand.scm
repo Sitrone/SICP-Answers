@@ -1,3 +1,5 @@
+#lang sicp
+
 (define rand
     (let ((x random-init))
       (lambda ()

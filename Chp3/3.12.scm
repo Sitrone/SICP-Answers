@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (append x y)
   (if (null? x)
       y

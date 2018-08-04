@@ -1,4 +1,6 @@
-(load "map.scm")
+#lang sicp
+
+(#%require "map.scm")
 
 ; filter
 (define (filter predicate sequence)

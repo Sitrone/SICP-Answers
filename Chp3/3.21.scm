@@ -1,4 +1,6 @@
-(load "queue.scm")
+#lang sicp
+
+(#%require "queue.scm")
 
 ;(define q1 (make-queue))
 ;(insert-queue! q1 'a)

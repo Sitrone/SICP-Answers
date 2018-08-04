@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; 基于类型的分派有两个明显的弱点
 ;;  第一， 必须知道所有不同的表示
 ;; 第二， 必须保证所有的独立的表现形式不能同名
@@ -5,7 +7,7 @@
 
 ; 进化：数据导向的程序设计
 
-(load "p118.scm")
+(#%require "p118.scm")
 
 (define (install-rectangular-package)
     ;; internal procedures

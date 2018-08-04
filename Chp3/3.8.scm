@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; f在第一次调用的时候返回调用它的促使first-value，
 ;; 然后将 f 设置为一个无论接受什么参数都只返回 0 的过程，因此最终求值结果就由第一次调用 f 的参数决定了。
 ;; Ref: http://sicp.readthedocs.io/en/latest/chp3/8.html

@@ -1,3 +1,5 @@
+#lang sicp
+
 ;; 3为正常的结果
 ;; (define test1 (cons a (cons b (cons '()))))
 

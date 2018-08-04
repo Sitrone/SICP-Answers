@@ -1,4 +1,6 @@
-(load "p76.scm")
+#lang sicp
+
+(#%require "p76.scm")
 
 (define (accumulate-n op init seqs)
     (if (null? (car seqs))

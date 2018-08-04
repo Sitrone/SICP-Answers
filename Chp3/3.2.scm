@@ -1,3 +1,5 @@
+#lang sicp
+
 (define (make-monitored f)
   (define call-num 0)
   (define (dispatch input)
