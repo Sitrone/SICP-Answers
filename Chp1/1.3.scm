@@ -13,3 +13,8 @@
 (define (bigger-sum-of-squares a b c)
         (sum-square (bigger a b)
                     (bigger (smaller a b) c)))
+
+(define (bigger-sum-of-three a b c)
+  	(+ (bigger (bigger a b)
+              c)
+      (smaller a (smaller b c))))
